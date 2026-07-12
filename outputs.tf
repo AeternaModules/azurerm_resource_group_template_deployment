@@ -1,3 +1,7 @@
+output "resource_group_template_deployments_id" {
+  description = "Map of id values across all resource_group_template_deployments, keyed the same as var.resource_group_template_deployments"
+  value       = { for k, v in azurerm_resource_group_template_deployment.resource_group_template_deployments : k => v.id }
+}
 output "resource_group_template_deployments_debug_level" {
   description = "Map of debug_level values across all resource_group_template_deployments, keyed the same as var.resource_group_template_deployments"
   value       = { for k, v in azurerm_resource_group_template_deployment.resource_group_template_deployments : k => v.debug_level }
